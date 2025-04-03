@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="index.html 1">
+    <title>About RedStore</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Styling */
+        header {
+            
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+           
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: slideIn 1s ease-in-out;
+            display: inline-block;
+            background: #f44336;
+        }
+
+        header p {
+            margin: 5px 0 0;
+            font-size: 1.2rem;
+            animation: fadeIn 2s ease-in-out;
+            color: black;
+        }
+
+        /* About Section */
+        section.about {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        section.about h2 {
+            font-size: 2rem;
+            color: #f44336;
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        section.about h2::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 3px;
+            background: #f44336;
+            animation: expand 1s ease;
+        }
+
+        section.about p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* Animation Keyframes */
+        @keyframes slideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes expand {
+            from {
+                width: 0;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #f44336;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background: #d32f2f;
+        }
+
+        /* Footer */
+        footer {
+            background: #f44336;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+          
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" width="125px"></a>
+            </div>
+            <nav>
+             <ul id="MenuItems">
+                 <li><a href="index.html">Home</a></li>
+                 <li><a href="products.html">Products</a></li>
+                 <li><a href="about.html">About</a></li>
+                 <li><a href="contact.html">Contact</a></li>
+                 <li><a href="account.html">Account</a></li>
+             </ul>
+            </nav>
+            <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+            <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+        </div>
+        
+     </div> 
+    <header>
+        
+         
+        <h1>Welcome to RedStore</h1>
+        <h2> <p >YOUR ULTIMATE DESTINATION FOR SPORTWEAR SHOES AND STYLISH WATCHES.</p></h2>
+    </header>
+
+    <section class="about">
+        <h2>About RedStore</h2>
+        <p>
+            At RedStore, we believe in combining performance with style. We specialize in premium sportswear shoes
+            and elegant watches that cater to both athletes and fashion enthusiasts. Our mission is to provide
+            high-quality, durable, and trendy products that help you perform at your best and look great doing it.
+        </p>
+        <p>
+            Whether you're hitting the gym, running marathons, or simply stepping out in style, RedStore is here
+            to support you every step of the way. Our collection includes the latest designs from top brands, 
+            ensuring you get the best in comfort and innovation.
+            A sports e-commerce website, like RedStore, is a comprehensive online platform dedicated to providing a seamless shopping experience for customers 
+            seeking high-quality sportswear, footwear, accessories, and equipment. These platforms combine the power of technology, convenience,
+             and a curated selection of products tailored to meet the diverse needs of athletes, fitness enthusiasts, and casual sports lovers alike.
+             RedStore is more than just an e-commerce website; it is a digital marketplace that serves as a one-stop destination for all things related to sports fashion and functionality. 
+             With a focus on premium sportswear shoes and stylish watches, RedStore bridges the gap between performance and aesthetics. It empowers individuals to achieve their fitness goals while 
+             looking their best, blending functionality with cutting-edge style.
+
+        </p>
+        <p>
+            Key Features of RedStore
+Diverse Product Range:
+
+Footwear: From running shoes designed for high-performance athletes to casual sneakers that match daily wear, RedStore offers a variety of options for every activity and style preference.
+Sports Watches: Stylish and durable watches that combine fitness tracking capabilities with elegant designs.
+Accessories and Gear: Including gym bags, socks, and wristbands to complement your sporting lifestyle.
+Quality and Authenticity:
+
+Products are sourced directly from trusted and renowned brands, ensuring quality, durability, and authenticity.
+A stringent curation process ensures that only the best items make it to the store.
+Customer-Centric Approach:
+
+User-friendly interface with intuitive navigation and search options.
+Detailed product descriptions, high-quality images, and size guides to help customers make informed choices.
+Technology and Innovation:
+
+Integrated with advanced filters for brand, size, color, and price range, making product discovery effortless.
+Recommendations based on user preferences and purchase history.
+Global Accessibility:
+
+Available to customers worldwide, offering seamless international shipping options.
+Support for multiple payment gateways, ensuring secure transactions.
+Community Building:
+
+Blog and resources section offering tips on fitness, sports trends, and the latest in athletic gear.
+Regularly updated with engaging content for sports enthusiasts.
+Sustainability Commitment:
+
+A focus on eco-friendly practices, such as sustainable packaging and partnerships with brands that prioritize the environment.
+        </p>
+        <a href="products.html" class="btn">Explore Our Products</a>
+    </section>
+
+    <footer>
+        &copy; 2025 RedStore | All Rights Reserved
+    </footer>
+</body>
+</html>

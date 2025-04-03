@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head style="align-items: center;">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/framer-motion/dist/framer-motion.umd.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: radial-gradient(circle, #ffe5e5, #fcdcdc, #f8c7c7);
+            font-family: 'Arial', sans-serif;
+            color: #1f2937;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .neon-text {
+            font-size: 3rem;
+            color: #b32626;
+            text-shadow: 0 0 10px #f1a5a5, 0 0 20px #f1a5a5, 0 0 40px #f1a5a5;
+        }
+
+        .glow-box {
+            box-shadow: 0 0 15px #f39b9b, 0 0 30px #f39b9b;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .floating {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .rotate-infinite {
+            animation: rotateInfinite 10s linear infinite;
+        }
+        .a1{
+            margin-right: 100px;
+            display: inline-block;
+        }
+
+        @keyframes rotateInfinite {
+            0% {
+                tran1form: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+    
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="account.html">Account</a></li>
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+            </div>
+</head>
+<body>
+    <div class="max-w-6xl w-full bg-white/90 rounded-2xl shadow-2xl p-10 relative overflow-hidden">
+        <!-- Animated Background Circle -->
+        <div class="absolute w-96 h-96 bg-red-300/20 rounded-full rotate-infinite top-[-10%] left-[-10%]"></div>
+        <div class="absolute w-96 h-96 bg-red-300/20 rounded-full rotate-infinite top-[-10%] right-[-10%] animate-delay-2"></div>
+
+        <div id="contact-card" class="grid md:grid-cols-2 gap-8 relative z-10 slide-in">
+            <!-- Left Section -->
+            <div class="text-center md:text-left">
+                <h1 class="neon-text font-bold mb-4 floating">Contact Us</h1>
+                <p class="text-gray-600 text-lg mb-6">We'd love to hear from you. Connect with us today!</p>
+
+                <div class="mt-8 space-y-6">
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Address</h2>
+                        <p class="text-gray-600">1234 Futuristic Street, City, State, 56789</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Phone</h2>
+                        <p class="text-gray-600">+1 123 456 7890</p>
+                    </div>
+
+                    <div>
+                        <h2 class="text-xl font-semibold text-gray-700">Email</h2>
+                        <p ma style="margin-bottom: 30px; ;" class="text-gray-600">support@Redstore.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="relative">
+                <form class="space-y-6">
+                    <input type="text" placeholder="Your Name" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-red-200 glow-box">
+                    <input type="email" placeholder="Your Email" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-red-200 glow-box">
+                    <textarea placeholder="Your Message" rows="5" class="w-full px-5 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-4 focus:ring-red-200 glow-box"></textarea>
+                    <button type="submit" class="w-full py-3 bg-red-400 text-white text-lg font-semibold rounded-lg shadow-lg hover:bg-red-500 focus:outline-none">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="a1">
+            <p style="margin-top: 40px;" class="text-gray-500">Follow us on:</p>
+            <div class="flex space-x-4 mt-2">
+                <a href="#" class="X"><svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c-5.465 0-9.836 4.372-9.836 9.836 0 4.359 2.861 8.062 6.832 9.469.5.088.679-.217.679-.48 0-.24-.008-.871-.013-1.71-2.776.601-3.362-1.338-3.362-1.338-.454-1.153-1.11-1.46-1.11-1.46-.909-.62.068-.607.068-.607 1.003.07 1.53 1.031 1.53 1.031.892 1.53 2.341 1.089 2.912.832.09-.646.35-1.088.637-1.338-2.215-.252-4.547-1.107-4.547-4.93 0-1.088.39-1.98 1.032-2.676-.103-.253-.447-1.268.098-2.645 0 0 .841-.27 2.751 1.024a9.563 9.563 0 0 1 5.004 0c1.91-1.295 2.75-1.024 2.75-1.024.546 1.377.202 2.392.1 2.645.642.696 1.031 1.588 1.031 2.676 0 3.832-2.336 4.673-4.559 4.92.359.31.679.918.679 1.852 0 1.337-.013 2.417-.013 2.746 0 .264.179.572.688.475 3.967-1.409 6.822-5.112 6.822-9.469 0-5.464-4.372-9.836-9.836-9.836z"/></svg></a>
+                <a href="#" class="C"><svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M22.23 5.924c-.793.353-1.647.592-2.542.698.915-.548 1.621-1.417 1.95-2.454-.856.508-1.804.879-2.81 1.079-.806-.859-1.956-1.396-3.233-1.396-2.447 0-4.428 1.982-4.428 4.43 0 .347.037.683.115 1.005-3.676-.184-6.933-1.945-9.118-4.62-.381.655-.6 1.412-.6 2.217 0 1.528.777 2.878 1.957 3.666-.722-.023-1.4-.221-1.993-.553v.055c0 2.137 1.52 3.919 3.534 4.322-.37.101-.761.155-1.164.155-.283 0-.561-.028-.831-.08.563 1.755 2.194 3.032 4.13 3.067-1.51 1.183-3.418 1.887-5.494 1.887-.356 0-.707-.021-1.053-.061 1.957 1.256 4.283 1.988 6.793 1.988 8.148 0 12.603-6.753 12.603-12.604 0-.193-.003-.384-.011-.573.865-.624 1.615-1.4 2.211-2.288z"/></svg></a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const { motion } = window.framerMotion;
+
+        motion.animate("#contact-card", {
+            opacity: [0, 1],
+            y: [-100, 0],
+            scale: [0.8, 1]
+        }, {
+            duration: 1.5,
+            easing: "easeInOut",
+        });
+
+        motion.animate("button", {
+            scale: [1, 1.1, 1],
+        }, {
+            repeat: Infinity,
+            duration: 1.5,
+            easing: "easeInOut",
+        });
+    </script>
+</body>
+</html>
+
+

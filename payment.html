@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Red Store Payment</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f1f3f6;
+            padding: 20px;
+            text-align: center;
+            width: 500px;
+            height:600px ;
+            margin-left: 500px;
+            
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin: auto;
+            text-align: left;
+        }
+        .payment-option {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .payment-option input {
+            margin-right: 10px;
+        }
+        .payment-option img {
+            height: 40px;
+            margin-left: auto;
+            width: 80px;
+        }
+        .note {
+            font-size: 12px;
+            color: #555;
+            margin-top: 10px;
+        }
+        .pay-button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            background: red;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-align: center;
+        }
+        .pay-button img {
+            height: 20px;
+            width: auto;
+            vertical-align: middle;
+        }
+        .pay-button:hover {
+            opacity: 0.9;
+        }
+        .card-form {
+            display: none;
+            background: #f9f9f9;
+            padding: 15px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+        .card-form input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .payment-container {
+           text-align: center;
+           align-items: center;
+           justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="index.html"><img src="images/logo.png" width="125px"></a>
+                </div>
+                <nav>
+                    <ul id="MenuItems">
+                        <li><a href="index.html">Back</a></li>
+                        
+                        
+                        
+                    </ul>
+                </nav>
+                <a href="cart.html"><img src="images/cart.png" width="30px" height="30px"></a>
+                <img src="images/menu.png" onclick="menutoggle()" class="menu-icon">
+            </div>
+            <hr>
+
+    <div class="payment-container">
+        <h1>Red store payment</h1>
+        <h3>Slect the payment method</h3>
+    </div>
+        
+        <label class="payment-option">
+            <input type="radio" name="payment" value="credit" onclick="updateButton()"> Credit Card
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg" alt="Visa">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard">
+        </label>
+
+        <div id="creditCardForm" class="card-form">
+            <label>Card Number</label>
+            <input type="text" placeholder="Enter Card Number">
+            
+            <label>Expiry Date</label>
+            <input type="text" placeholder="MM/YY">
+            
+            <label>CVV</label>
+            <input type="password" placeholder="CVV">
+        </div>
+        
+        <label class="payment-option">
+            <input type="radio" name="payment" value="debit" onclick="updateButton()"> Debit Card
+            <img src="images/rule_pay-removebg-preview.png" alt="RuPay">
+        </label>
+
+        <div id="debitCardForm" class="card-form">
+            <label>Card Number</label>
+            <input type="text" placeholder="Enter Card Number">
+            
+            <label>Expiry Date</label>
+            <input type="text" placeholder="MM/YY">
+            
+            <label>CVV</label>
+            <input type="password" placeholder="CVV">
+        </div>
+        
+        <label class="payment-option">
+            <input type="radio" name="payment" value="paypal" onclick="updateButton()"> PayPal
+            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal">
+        </label>
+        
+        <label class="payment-option">
+            <input type="radio" name="payment" value="apple" onclick="updateButton()"> Apple Pay 
+            <img src="images/app-store.png" alt="Apple Pay">
+        </label>
+        
+        <label class="payment-option">
+            <input type="radio" name="payment" value="gpay" onclick="updateButton()"> Google Pay
+            <img style="height:80px ; width:auto ;" src="images/new gpay logo-2.webp" alt="Google Pay">
+        </label>
+
+        <p class="note">After clicking "Complete Order", you will be redirected to complete your purchase securely.</p>
+
+        <a id="orderLink" href="deatils.html" target="_blank">
+           
+
+       <button id="orderButton" onclick="processPayment()" class="pay-button">Complete Order</button> 
+       
+    </div>
+
+    
+
+    <script>
+        function openModal() { document.getElementById('qrModal').style.display = 'block'; }
+        function closeModal() { document.getElementById('qrModal').style.display = 'none'; }
+    </script>
+    </a>
+    </div>
+    <script>
+        function updateButton() {
+            var selectedPayment = document.querySelector('input[name="payment"]:checked').value;
+            var button = document.getElementById("orderButton");
+            var orderLink = document.getElementById("orderLink");
+            var debitForm = document.getElementById("debitCardForm");
+            var creditForm = document.getElementById("creditCardForm");
+    
+            // Set payment links
+            var paymentLinks = {
+                "gpay": "file:///C:/Users/USER/Music/Project%20main%201/RedStore%20Code/deatils.html",
+                "apple": "https://www.apple.com/apple-pay/",
+                "paypal": "https://www.paypal.com/",
+                "debit": "https://example.com/debit-payment",
+                "credit": "https://example.com/credit-payment"
+            };
+    
+            if (selectedPayment === "gpay") {
+                button.innerHTML = '<img src="images/gpay.jpg" alt="Google Pay" height="20"> Pay with Google Pay';
+                button.style.background = "#4285F4";
+                orderLink.setAttribute("", paymentLinks["gpay"]);
+                debitForm.style.display = "none";
+                creditForm.style.display = "none";
+            } 
+            else if (selectedPayment === "apple") {
+                button.innerHTML = '<img src="images/app-store.png" alt="Apple Pay" height="20"> Pay with Apple Pay';
+                button.style.background = "black";
+                orderLink.setAttribute("href", paymentLinks["apple"]);
+                debitForm.style.display = "none";
+                creditForm.style.display = "none";
+            } 
+            else if (selectedPayment === "paypal") {
+                button.innerHTML = '<img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" height="20"> Pay with PayPal';
+                button.style.background = "#0070BA";
+                orderLink.setAttribute("href", paymentLinks["paypal"]);
+                debitForm.style.display = "none";
+                creditForm.style.display = "none";
+            } 
+            else if (selectedPayment === "debit") {
+                button.innerHTML = "Complete Order";
+                button.style.background = "red";
+                orderLink.setAttribute("href", paymentLinks["debit"]);
+                debitForm.style.display = "block";
+                creditForm.style.display = "none";
+            } 
+            else if (selectedPayment === "credit") {
+                button.innerHTML = "Complete Order";
+                button.style.background = "red";
+                orderLink.setAttribute("href", paymentLinks["credit"]);
+                creditForm.style.display = "block";
+                debitForm.style.display = "none";
+            } 
+            else {
+                button.innerHTML = "Complete Order";
+                button.style.background = "red";
+                orderLink.setAttribute("href", "#");
+                debitForm.style.display = "none";
+                creditForm.style.display = "none";
+            }
+        }
+    </script>
+    
+</body>
+</html>
+
+
